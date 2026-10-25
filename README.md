@@ -91,7 +91,7 @@ Meetily and your transcripts are not touched.
 - **30-minute remote session.** We install and test Meeting Watcher + Meetily on your Mac, set the permissions, run a test call, and show you where your transcripts are saved.
 - **Bonus:** a quick look at where else admin is eating your time.
 
-👉 [Pay £49](STRIPE_PAYMENT_LINK) · [Book your slot](https://cal.com/ihsanopsai/30min)
+👉 [Pay £49](https://buy.stripe.com/7sY3cx3CS8smg1abdL0RG0n) · [Book your slot](https://cal.com/ihsanopsai/30min)
 
 ### From £250 — Transcripts filed automatically
 
