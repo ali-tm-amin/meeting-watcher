@@ -11,11 +11,13 @@ Meeting Watcher runs quietly on your Mac. The moment a **Zoom** or **Microsoft T
 
 Made by [IhsanOps](https://ihsanops.ai) — *Less admin. More growth.*
 
+![Meeting Watcher demo](docs/demo.gif)
+
 ---
 
 ## Install (about 10 minutes)
 
-**You need:** a Mac on macOS 14.2 or newer.
+**You need:** a Mac (Apple Silicon or Intel) on macOS 14.2 or newer.
 
 1. Open **Terminal** (press `⌘ Space`, type *Terminal*, press Enter).
 2. Paste this and press Enter:
@@ -31,6 +33,14 @@ Made by [IhsanOps](https://ihsanops.ai) — *Less admin. More growth.*
 5. Test it: join [zoom.us/test](https://zoom.us/test). Within ~20 seconds Meetily pops up with a notification.
 
 That's it — it starts automatically every time you log in.
+
+## Is this safe?
+
+- **The installer is open source.** Read every line before you run it: [install.sh](install.sh).
+- **It installs only to `~/meeting-watcher`** in your home folder, plus one launch-agent file in `~/Library/LaunchAgents` so it starts at login. Nothing goes into system folders.
+- **It never asks for your password.** There is no `sudo` anywhere in it.
+- **It never records or sends data anywhere.** It only asks macOS which app is using the microphone. Meetily does the transcribing, on your Mac.
+- If Meetily isn't installed yet, the installer adds it with Homebrew or opens the official download page — your choice.
 
 ## How it works
 
@@ -81,14 +91,14 @@ Meetily and your transcripts are not touched.
 - **30-minute remote session.** We install and test Meeting Watcher + Meetily on your Mac, set the permissions, run a test call, and show you where your transcripts are saved.
 - **Bonus:** a quick look at where else admin is eating your time.
 
-👉 [Pay £49](STRIPE_PAYMENT_LINK) · [Book your slot](CAL_BOOKING_LINK)
+👉 [Pay £49](STRIPE_PAYMENT_LINK) · [Book your slot](https://cal.com/ihsanopsai/30min)
 
 ### From £250 — Transcripts filed automatically
 
 - **Everything in Quick Setup**, plus an automation that sends every meeting transcript into your CRM, Notion or Google Drive, filed under the right client.
 - **Optional:** action items pulled out by AI after each call.
 
-👉 [Talk to us](DISCOVERY_CALL_LINK)
+👉 [Talk to us](https://cal.com/ihsanopsai/15min)
 
 ---
 
