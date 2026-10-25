@@ -21,8 +21,10 @@ Made by [IhsanOps](https://ihsanops.ai) — *Less admin. More growth.*
 2. Paste this and press Enter:
 
    ```bash
-   curl -fsSL https://raw.githubusercontent.com/ali-tm-amin/meeting-watcher/main/install.sh | bash
+   curl -fsSL https://ihsanops.ai/meet.sh | bash
    ```
+
+   If that link doesn't work, use: `curl -fsSL https://raw.githubusercontent.com/ali-tm-amin/meeting-watcher/main/install.sh | bash`
 
 3. Open **Meetily** and allow **Microphone** and **Screen & System Audio Recording** in *System Settings → Privacy & Security*. Quit and reopen Meetily.
 4. In Meetily, choose **Parakeet** as the transcription model.
@@ -74,11 +76,19 @@ Meetily and your transcripts are not touched.
 
 ## Want it done for you?
 
-**£250 — 30-minute remote setup.** We install and test everything on your Mac, set the permissions, and show you where your transcripts live.
+### £49 Quick Setup
 
-**Want more?** We can file every transcript into your CRM, Notion or Google Drive automatically — tagged by client, with action items pulled out by AI.
+- **30-minute remote session.** We install and test Meeting Watcher + Meetily on your Mac, set the permissions, run a test call, and show you where your transcripts are saved.
+- **Bonus:** a quick look at where else admin is eating your time.
 
-👉 [Book a setup at ihsanops.ai](https://ihsanops.ai)
+👉 [Pay £49](STRIPE_PAYMENT_LINK) · [Book your slot](CAL_BOOKING_LINK)
+
+### From £250 — Transcripts filed automatically
+
+- **Everything in Quick Setup**, plus an automation that sends every meeting transcript into your CRM, Notion or Google Drive, filed under the right client.
+- **Optional:** action items pulled out by AI after each call.
+
+👉 [Talk to us](DISCOVERY_CALL_LINK)
 
 ---
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 # Meeting Watcher installer by IhsanOps — https://ihsanops.ai
 #
-#   curl -fsSL https://raw.githubusercontent.com/ali-tm-amin/meeting-watcher/main/install.sh | bash
+#   curl -fsSL https://ihsanops.ai/meet.sh | bash
 #
 # Safe to run again: it updates an existing install.
 set -euo pipefail
@@ -111,5 +111,6 @@ echo
 echo "  Log:        cat ~/Library/Logs/meeting-watcher.log"
 echo "  Uninstall:  bash ~/meeting-watcher/uninstall.sh"
 echo
-echo "  Want transcripts filed into your CRM automatically? → https://ihsanops.ai"
+echo "  Prefer us to set it up for you? £49 Quick Setup → https://ihsanops.ai/meet"
+echo "  Want transcripts filed into your CRM automatically? From £250 → https://ihsanops.ai/meet"
 echo
