@@ -11,8 +11,6 @@ Meeting Watcher runs quietly on your Mac. The moment a **Zoom** or **Microsoft T
 
 Made by [IhsanOps](https://ihsanops.ai) — *Less admin. More growth.*
 
-![Meeting Watcher demo](docs/demo.gif)
-
 ---
 
 ## Install (about 10 minutes)
