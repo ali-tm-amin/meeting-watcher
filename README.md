@@ -11,6 +11,8 @@ Meeting Watcher runs quietly on your Mac. The moment a **Zoom** or **Microsoft T
 
 Made by [IhsanOps](https://ihsanops.ai) — *Less admin. More growth.*
 
+![Join a Zoom call and Meetily pops up, ready to record](docs/demo.gif)
+
 ---
 
 ## Install (about 10 minutes)
