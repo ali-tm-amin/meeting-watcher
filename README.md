@@ -4,10 +4,12 @@
 
 Meeting Watcher runs quietly on your Mac. The moment a **Zoom** or **Microsoft Teams** call starts, it opens [Meetily](https://meetily.ai) — a free, open-source meeting transcriber — and pops up a reminder. You click record only for the calls you want.
 
-- 🔒 **Private** — everything stays on your Mac. No bots join your calls, nothing is uploaded.
+No subscription. No bot in your call. Nothing leaves your Mac.
+
+- 💸 **Free** — no monthly fee, no account. Meeting Watcher and Meetily are both free and open source.
+- 🔒 **Private** — transcribing happens on your Mac. No bot joins your calls, nothing is uploaded.
 - 🎯 **Smart** — watches which app is using your microphone, so YouTube, podcasts and dictation never trigger it.
 - 🙋 **You stay in control** — it reminds, it doesn't record by itself.
-- 💸 **Free** — Meeting Watcher and Meetily are both free and open source.
 
 Made by [IhsanOps](https://ihsanops.ai) — *Less admin. More growth.*
 
