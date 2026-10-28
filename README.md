@@ -120,7 +120,7 @@ Meetily and your transcripts are not touched.
 
 ### £49 Quick Setup
 
-- **30-minute remote session.** We install and test Meeting Watcher + Meetily on your Mac or PC, set the permissions, run a test call, and show you where your transcripts are saved.
+- **30-minute remote session.** We install and test Meeting Watcher + Meetily on your Mac, set the permissions, run a test call, and show you where your transcripts are saved.
 - **Bonus:** a quick look at where else admin is eating your time.
 
 👉 [Pay £49 and pick your slot](https://buy.stripe.com/7sY3cx3CS8smg1abdL0RG0n) — you choose your 30-minute slot straight after paying.
