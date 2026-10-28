@@ -46,8 +46,10 @@ That's it — it starts automatically every time you log in.
 2. Paste this and press Enter:
 
    ```powershell
-   irm https://raw.githubusercontent.com/ali-tm-amin/meeting-watcher/main/windows/install.ps1 | iex
+   irm https://ihsanops.ai/meet.ps1 | iex
    ```
+
+   If that link doesn't work, use: `irm https://raw.githubusercontent.com/ali-tm-amin/meeting-watcher/main/windows/install.ps1 | iex`
 
 3. Open **Meetily** and allow microphone access if Windows asks. Choose **Parakeet** (or Whisper) as the transcription model.
 4. Test it: join [zoom.us/test](https://zoom.us/test). Within ~20 seconds Meetily pops up with a notification.

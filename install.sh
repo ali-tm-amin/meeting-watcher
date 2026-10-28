@@ -27,7 +27,7 @@ echo
 
 # ---- 1. Check the Mac -------------------------------------------------------
 bold "1/4 Checking your Mac"
-[[ "$(uname -s)" == "Darwin" ]] || fail "This installer is for macOS. On Windows, open PowerShell and run: irm https://raw.githubusercontent.com/ali-tm-amin/meeting-watcher/main/windows/install.ps1 | iex"
+[[ "$(uname -s)" == "Darwin" ]] || fail "This installer is for macOS. On Windows, open PowerShell and run: irm https://ihsanops.ai/meet.ps1 | iex"
 
 ver="$(sw_vers -productVersion)"
 IFS=. read -r major minor _ <<< "$ver.0"

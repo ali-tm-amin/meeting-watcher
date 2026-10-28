@@ -4,7 +4,8 @@
 # https://github.com/ali-tm-amin/meeting-watcher/issues
 #
 # Open PowerShell (not as administrator) and paste:
-#   irm https://raw.githubusercontent.com/ali-tm-amin/meeting-watcher/main/windows/install.ps1 | iex
+#   irm https://ihsanops.ai/meet.ps1 | iex
+# (or, if that link is down: irm https://raw.githubusercontent.com/ali-tm-amin/meeting-watcher/main/windows/install.ps1 | iex)
 #
 # Safe to run again: it updates an existing install. Never asks for admin.
 $ErrorActionPreference = 'Stop'
