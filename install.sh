@@ -71,6 +71,21 @@ else
   open "https://github.com/Zackriya-Solutions/meeting-minutes/releases/latest" || true
 fi
 
+# Summary template: Meetily reads extra templates from this folder. Ours keeps
+# words spoken in another language (Arabic, Urdu, …) in Latin letters with the
+# English meaning in brackets, and adds a glossary. It replaces the default
+# "Standard Meeting Notes" template; delete the file to go back to Meetily's own.
+TEMPLATES="$HOME/Library/Application Support/Meetily/templates"
+mkdir -p "$TEMPLATES"
+if curl -fsSL "$BASE/meetily/standard_meeting.json" -o "$TEMPLATES/standard_meeting.json.tmp" \
+   && grep -q '"sections"' "$TEMPLATES/standard_meeting.json.tmp"; then
+  mv "$TEMPLATES/standard_meeting.json.tmp" "$TEMPLATES/standard_meeting.json"
+  ok "Summary template installed (keeps Arabic and other non-English terms, adds a glossary)"
+else
+  rm -f "$TEMPLATES/standard_meeting.json.tmp"
+  warn "Couldn't install the summary template — Meetily will use its own. Not a problem."
+fi
+
 # ---- 4. Start in the background --------------------------------------------
 bold "4/4 Starting Meeting Watcher"
 cat > "$PLIST" <<EOF
@@ -102,8 +117,12 @@ echo
 bold "All done. Three quick things in Meetily:"
 echo "  1. Open Meetily and allow Microphone + Screen & System Audio Recording"
 echo "     (System Settings → Privacy & Security), then quit and reopen it."
-echo "  2. Choose Parakeet as the transcription model."
+echo "  2. Choose the transcription model: Parakeet for English-only calls,"
+echo "     Whisper if your calls mix in Arabic or other languages."
 echo "  3. Test it: join https://zoom.us/test — Meetily pops up within ~20 seconds."
+echo
+echo "  Summaries use the 'Standard Meeting Notes + glossary' template: English only,"
+echo "  with Arabic or other non-English terms kept and explained in brackets."
 echo
 echo "  Didn't see a notification? Allow notifications for 'Script Editor'"
 echo "  in System Settings → Notifications."

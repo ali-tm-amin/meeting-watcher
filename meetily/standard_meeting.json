@@ -1,0 +1,33 @@
+{
+  "name": "Standard Meeting Notes + glossary",
+  "description": "IhsanOps version of the standard template. English output that keeps words spoken in another language (for example Arabic or Islamic terms) in Latin letters with their closest English meaning, plus a glossary at the end.",
+  "sections": [
+    {
+      "title": "Summary",
+      "instruction": "Write a brief one-paragraph executive summary of the whole meeting, in English. Speakers may mix in words from another language, most often Arabic or Islamic terms. Keep every such word exactly as spoken, written in Latin letters, and add its closest English meaning in brackets the first time it appears, for example \"inshallah (God willing)\" or \"sadaqah (voluntary charity)\". Never drop, replace or paraphrase these words away, and never write in any language other than English",
+      "format": "paragraph"
+    },
+    {
+      "title": "Key Decisions",
+      "instruction": "List the most important decisions made during the meeting and who made each one. Apply the same rule: any non-English term stays in Latin letters with its English meaning in brackets on first use",
+      "format": "list"
+    },
+    {
+      "title": "Action Items",
+      "instruction": "List every assigned task with its owner and due date. Use the names heard in the transcript and write \"Not stated\" where a due date was not given. Always add the reference transcript segment and its timestamp",
+      "format": "list",
+      "item_format": "| **Owner** | Task | Due | Reference Transcript Segment | Segment Time stamp |\n| --- | --- | --- | --- | --- |"
+    },
+    {
+      "title": "Discussion Highlights",
+      "instruction": "Summarise the main topics discussed, the key arguments and important insights, in English, keeping non-English terms in Latin letters with their English meaning in brackets on first use",
+      "format": "paragraph"
+    },
+    {
+      "title": "Glossary of terms from other languages",
+      "instruction": "One row for every word or phrase from a language other than English that appeared in the transcript (Arabic and Islamic terms included): the term in Latin letters, its closest English meaning, and the sentence it appeared in. If the transcript wrote a term in Arabic script, give the Latin spelling as well. If no such terms appeared, write \"None noted in this section.\"",
+      "format": "list",
+      "item_format": "| **Term** | **Meaning in English** | **Where it was used** |\n| --- | --- | --- |"
+    }
+  ]
+}

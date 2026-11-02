@@ -31,7 +31,7 @@ Made by [IhsanOps](https://ihsanops.ai) — *Less admin. More growth.*
    If that link doesn't work, use: `curl -fsSL https://raw.githubusercontent.com/ali-tm-amin/meeting-watcher/main/install.sh | bash`
 
 3. Open **Meetily** and allow **Microphone** and **Screen & System Audio Recording** in *System Settings → Privacy & Security*. Quit and reopen Meetily.
-4. In Meetily, choose **Parakeet** as the transcription model.
+4. In Meetily, choose the transcription model: **Parakeet** for English-only calls, **Whisper** if your calls mix in Arabic or other languages.
 5. Test it: join [zoom.us/test](https://zoom.us/test). Within ~20 seconds Meetily pops up with a notification.
 
 That's it — it starts automatically every time you log in.
@@ -51,7 +51,7 @@ That's it — it starts automatically every time you log in.
 
    If that link doesn't work, use: `irm https://raw.githubusercontent.com/ali-tm-amin/meeting-watcher/main/windows/install.ps1 | iex`
 
-3. Open **Meetily** and allow microphone access if Windows asks. Choose **Parakeet** (or Whisper) as the transcription model.
+3. Open **Meetily** and allow microphone access if Windows asks. Choose the transcription model: **Parakeet** for English-only calls, **Whisper** if your calls mix in Arabic or other languages.
 4. Test it: join [zoom.us/test](https://zoom.us/test). Within ~20 seconds Meetily pops up with a notification.
 
 It starts automatically every time you sign in (a per-user Scheduled Task called *IhsanOps Meeting Watcher*). It never asks for admin rights and installs only to `%USERPROFILE%\meeting-watcher`. Read every line first: [windows/install.ps1](windows/install.ps1).
@@ -85,6 +85,18 @@ It never records audio itself and never sends anything anywhere.
 Every recorded meeting appears in Meetily's sidebar. Copy the transcript into Claude, ChatGPT, Notion or your CRM.
 
 > **Tip:** Let people know you're recording at the start of the call — it's good practice and helps with UK GDPR.
+
+## Summaries in English, Arabic terms kept
+
+Many of our calls are in English with Arabic or Islamic terms mixed in, and a normal summary either drops them or mistranslates them. The installer adds a summary template to Meetily that fixes this. It is the default **Standard Meeting Notes + glossary** template you see next to *Generate Summary*:
+
+- English only, never any other language.
+- Every Arabic (or Urdu, Turkish, …) word stays as spoken, in Latin letters, with its closest English meaning in brackets the first time it appears, like "sadaqah (voluntary charity)".
+- A glossary table at the end: term, meaning, the sentence it came from.
+
+It works with whatever summary model you picked in Meetily (built-in, Ollama, Claude, OpenAI…). For the words to reach the summary at all, the transcription model must be **Whisper**, since Parakeet does not understand Arabic.
+
+The template is one file: [meetily/standard_meeting.json](meetily/standard_meeting.json). It lives in `~/Library/Application Support/Meetily/templates/` on Mac and `%APPDATA%\Meetily\templates\` on Windows. Edit it to suit your calls (restart Meetily afterwards), or delete it to get Meetily's original template back. To add your own templates, drop more `.json` files in the same folder; Meetily lists them automatically.
 
 ## Settings (optional)
 

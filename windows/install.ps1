@@ -68,6 +68,23 @@ if ($meetily) {
     Start-Process 'https://github.com/Zackriya-Solutions/meeting-minutes/releases/latest' | Out-Null
 }
 
+# Summary template: Meetily reads extra templates from %APPDATA%\Meetily\templates.
+# Ours keeps words spoken in another language (Arabic, Urdu, ...) in Latin letters
+# with the English meaning in brackets, and adds a glossary. It replaces the default
+# "Standard Meeting Notes" template; delete the file to go back to Meetily's own.
+$Templates = Join-Path $env:APPDATA 'Meetily\templates'
+try {
+    New-Item -ItemType Directory -Path $Templates -Force | Out-Null
+    $tmp = Join-Path $Templates 'standard_meeting.json.tmp'
+    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/$Repo/$Branch/meetily/standard_meeting.json" -OutFile $tmp -UseBasicParsing
+    $null = Get-Content $tmp -Raw | ConvertFrom-Json
+    Move-Item -Path $tmp -Destination (Join-Path $Templates 'standard_meeting.json') -Force
+    Ok 'Summary template installed (keeps Arabic and other non-English terms, adds a glossary)'
+} catch {
+    Remove-Item -Path (Join-Path $Templates 'standard_meeting.json.tmp') -ErrorAction SilentlyContinue
+    Warn "Couldn't install the summary template - Meetily will use its own. Not a problem."
+}
+
 # ---- 4. Start in the background --------------------------------------------
 Bold '4/4 Starting Meeting Watcher'
 $script = Join-Path $Dir 'meeting-watcher.ps1'
@@ -101,8 +118,12 @@ try {
 Write-Host ''
 Bold 'All done. Three quick things in Meetily:'
 Write-Host '  1. Open Meetily and allow Microphone access if Windows asks.'
-Write-Host '  2. Choose Parakeet (or Whisper) as the transcription model.'
+Write-Host '  2. Choose the transcription model: Parakeet for English-only calls,'
+Write-Host '     Whisper if your calls mix in Arabic or other languages.'
 Write-Host '  3. Test it: join https://zoom.us/test — Meetily pops up within ~20 seconds.'
+Write-Host ''
+Write-Host "  Summaries use the 'Standard Meeting Notes + glossary' template: English only,"
+Write-Host '  with Arabic or other non-English terms kept and explained in brackets.'
 Write-Host ''
 Write-Host "  See what it detected:  Get-Content $Dir\meeting-watcher.log"
 Write-Host "  Apps on the mic now:   powershell -ExecutionPolicy Bypass -File $Dir\meeting-watcher.ps1 -Once"

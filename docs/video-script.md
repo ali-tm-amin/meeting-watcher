@@ -59,7 +59,7 @@ it. If Meetily was not installed, show the download page opening and say:
 **Shot:** System Settings → Privacy & Security → Microphone, then Screen & System
 Audio Recording, Meetily toggled on in both.
 
-> Now the transcription model. In Meetily settings pick the model. Parakeet is
+> Now the transcription model. In Meetily's Settings pick the model. Parakeet is
 > fastest and great for plain English. If your calls mix in other languages,
 > choose Whisper instead. I'll show you why in a minute.
 
@@ -83,12 +83,15 @@ in the sidebar.
 
 > One tip if your calls mix languages. Mine mix English and Arabic. Parakeet
 > only knows European languages, so Arabic words come out as nonsense. Whisper
-> handles both. Set the model to Whisper, and in Meetily's summary template tell
-> it to keep Arabic terms and add the English meaning in brackets. The template
-> is in the description.
+> handles both, so set the model to Whisper. Then the summary: the installer
+> already added a template to Meetily. Open any meeting, press Generate Summary,
+> and the default template keeps every Arabic word, puts the English meaning in
+> brackets, and adds a glossary at the end. Nothing to set up, nothing to type.
 
-**Shot:** model set to Whisper; the summary template text pasted in; a summary
-showing "inshallah (God willing)" style output.
+**Shot:** Settings → model set to Whisper. Then a meeting: click the Template
+button next to Generate Summary to show "Standard Meeting Notes + glossary" is
+selected, generate, scroll to a line like "sadaqah (voluntary charity)" and the
+glossary table at the bottom.
 
 ## 6. Close — 4:40 to 5:00  (back to /meet)
 
