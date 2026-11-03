@@ -1,129 +1,237 @@
-# Meeting Watcher — install and setup video (script and shot list)
+# Meeting Watcher — launch video (recording plan, script, shot list)
 
-Target: 4 to 5 minutes. YouTube first, then reused as the "how to" for £49 setup clients.
-Record screen with Kap or QuickTime at 1920×1080, voice on a separate track if you can
-(QuickTime: File → New Screen Recording, pick your mic). Talk slower than feels natural.
-Pauses and mistakes are fine: they get cut in the edit.
+Target: 4 to 5 minutes after editing. Record 10 to 15 minutes of raw footage; the
+waits and retakes get cut. YouTube first, then the same video is the "how to" for
+£49 setup clients and the link in the setup email.
 
 Title: **Never forget to record a client call again (free, private, 10-minute setup)**
 
+You do a real install from nothing, on camera, then a real Zoom test call, then a
+real summary with Arabic terms explained. Nothing staged, nothing pre-done.
+
 ---
 
-## 0. Cold open — 0:00 to 0:20  (camera on you, or just the demo GIF full screen)
+## Part A. Before you press record (15 minutes)
+
+### 1. Reset the Mac so the install is real
+
+Run these in Terminal. They keep all your existing meetings safe in a backup folder.
+
+```bash
+# 1. Remove Meeting Watcher
+bash ~/meeting-watcher/uninstall.sh
+
+# 2. Remove Meetily, keep your meetings and the downloaded models aside
+brew uninstall --cask meetily
+mv ~/Library/Application\ Support/com.meetily.ai ~/Desktop/meetily-backup
+mv ~/Library/Application\ Support/Meetily      ~/Desktop/meetily-backup-templates
+
+# 3. Put the already-downloaded models back so the video doesn't wait on a 1.5 GB download
+mkdir -p ~/Library/Application\ Support/com.meetily.ai
+cp -R ~/Desktop/meetily-backup/models ~/Library/Application\ Support/com.meetily.ai/models
+```
+
+After the video, restore your old meetings:
+
+```bash
+cp ~/Desktop/meetily-backup/meeting_minutes.sqlite ~/Library/Application\ Support/com.meetily.ai/
+```
+
+If Meetily still downloads a model during the recording, keep recording and keep
+talking. The wait gets cut.
+
+### 2. Tidy the screen
+
+- **Focus / Do Not Disturb OFF.** The whole video hinges on a notification appearing. Check the top-right menu bar.
+- System Settings → Displays → pick the **"Larger Text"** scaling. Small text is unreadable on a phone.
+- Terminal: Cmd + until the font is about 18 pt. Light theme reads better on YouTube.
+- One browser window with one tab: `ihsanops.ai/meet`. Close every other tab and window (VS Code, WhatsApp, Mail, Slack).
+- Wallpaper: plain. Desktop: empty. Dock: fine as it is.
+- Have `zoom.us/test` ready to type when needed.
+- Mute your phone.
+
+### 3. Recording tool
+
+QuickTime is enough: **File → New Screen Recording → Options → Microphone: MacBook (or your headset) → Record Entire Screen**. Kap also works (turn on "show mouse clicks").
+
+Mic: a headset or the AirPods is noticeably better than the laptop mic. Record in a quiet room, door closed.
+
+### 4. How to talk
+
+- Say the line, **then** do the click. Don't talk while typing.
+- Slower than feels natural. Pause one full second between sentences.
+- Made a mistake? Stop, pause two seconds, say the whole line again from the start. Don't stop the recording. I cut the bad take.
+- Waiting for a download or a summary? Say "this takes about a minute, I'll cut the wait" and keep going.
+- Keep the mouse still when you're not pointing at something.
+
+---
+
+## Part B. The script
+
+Headings are what the viewer sees. Lines in quotes are what you say. **Shot** is what is on screen.
+
+### 0. Hook — 0:00 to 0:15
+
+**Shot:** Zoom window open, you talking. Or just the demo GIF full screen.
 
 > You're twenty minutes into a client call and you realise you never hit record.
-> Everything they just told you is gone. This fixes that. It's free, nothing leaves
-> your Mac, and the setup takes ten minutes. Let me show you.
+> Everything they just told you, gone.
+> This fixes that. It's free, nothing leaves your Mac, and I'll install it from
+> scratch right now in under ten minutes.
 
-**Shot:** the demo GIF (docs/demo.gif) plays while you say it, then cut to your face
-or straight to the browser.
+### 1. What it is — 0:15 to 0:45
 
-## 1. What it is — 0:20 to 1:00  (browser on ihsanops.ai/meet)
+**Shot:** browser on `ihsanops.ai/meet`. Scroll slowly. Pause on "No subscription. No bot in your call. Nothing leaves your Mac."
 
-> Meeting Watcher is a tiny script that watches which app is using your microphone.
-> The moment Zoom or Teams grabs the mic, it opens Meetily, a free open-source
-> transcriber, and pops up a reminder. You click record only for the calls you want.
+> This is Meeting Watcher. A tiny script that watches which app is using your
+> microphone. The moment Zoom or Teams takes the mic, it opens Meetily, a free
+> open-source transcriber, and pops up a reminder. You press record for the calls
+> you want.
 >
-> Three things to know. No subscription, no account, no card. No bot joins your
-> call, so your clients see nothing. And the transcript is made on your Mac, not
-> uploaded anywhere.
+> Three things. No subscription, no account, no card. No bot joins your call, so
+> your client sees nothing. And the transcript is made on your Mac, not uploaded
+> anywhere.
 
-**Shot:** scroll /meet slowly; pause on "No subscription. No bot in your call.
-Nothing leaves your Mac." Mouse over the three "How it works" steps.
+### 2. Install — 0:45 to 1:45
 
-## 2. Install — 1:00 to 2:15  (Terminal)
+**Shot:** click the **Copy** button on the install command on /meet. Cmd-Space, type Terminal, Enter. Paste, Enter.
 
-> Open Terminal: press Command-Space, type Terminal, Enter.
-> Copy the command from the page and paste it in. Press Enter.
+> Copy the one line from the page. Open Terminal: Command-Space, type Terminal.
+> Paste it, press Enter. That's the whole install.
 
-**Shot:** click Copy on /meet, paste into Terminal, Enter. Let the installer run on
-screen. Read the four steps aloud as they appear.
+**Shot:** the installer runs. Read the steps aloud as the green ticks appear.
 
-> It checks your Mac, downloads the script to a folder in your home directory,
-> checks whether Meetily is installed, and starts the watcher in the background.
-> It never asks for your password. If you want to read every line first, the
-> installer is open source, link in the description.
+> It checks your Mac. Downloads the script into a folder in your home directory.
+> Then it checks for Meetily, and if you don't have it, installs it for you.
+> It never asks for your password. The script is open source, link in the
+> description, read every line if you like.
 
-**Shot:** when the "Meeting Watcher is on" notification appears top-right, point at
-it. If Meetily was not installed, show the download page opening and say:
+**Shot:** the "Summary template installed" tick. Point at it.
 
-> If you don't have Meetily yet, it opens the download page. Install it like any
-> Mac app, then come back.
+> See that line, summary template. Remember it, I'll show you what it does at the end.
 
-## 3. Meetily permissions and model — 2:15 to 3:15  (Meetily + System Settings)
+**Shot:** the **"Meeting Watcher is on"** notification top-right. Point at it.
 
-> Open Meetily. First time, macOS asks for microphone and screen-and-system-audio
-> permission. Say yes to both, then quit Meetily and open it again. That restart
-> matters.
+> And that's it running. It starts itself every time you log in. You never touch it again.
 
-**Shot:** System Settings → Privacy & Security → Microphone, then Screen & System
-Audio Recording, Meetily toggled on in both.
+### 3. Meetily first run — 1:45 to 2:45
 
-> Now the transcription model. In Meetily's Settings pick the model. Parakeet is
-> fastest and great for plain English. If your calls mix in other languages,
-> choose Whisper instead. I'll show you why in a minute.
+**Shot:** open Meetily from Applications. First-run screens.
 
-**Shot:** Meetily settings page, model dropdown. Pick Parakeet (or Whisper, see §5).
+> Now open Meetily. The first time, macOS asks for two permissions: microphone,
+> and screen and system audio recording. That second one is how it hears the other
+> people on the call. Say yes to both.
 
-## 4. The test call — 3:15 to 4:00  (zoom.us/test)
+**Shot:** System Settings → Privacy & Security → Microphone (Meetily on), then Screen & System Audio Recording (Meetily on). Quit Meetily, open it again.
 
-> Now test it. Go to zoom.us/test and join. Don't touch anything else.
+> Then quit Meetily and open it again. That restart matters, it won't hear anything
+> until you do.
 
-**Shot:** join the test meeting. Wait. Around twenty seconds later Meetily comes
-to the front and the notification appears. Point at it.
+**Shot:** Meetily → Settings → transcription model. Pick **Whisper**.
 
-> There it is. Zoom took the microphone, Meeting Watcher noticed, Meetily opened
-> and reminded me. I click Start Recording and it transcribes on my Mac. When the
-> call ends, I get a second reminder to stop.
+> One setting. The transcription model. Parakeet is the default, it's fast and
+> great for plain English. My calls mix English and Arabic, and Parakeet only
+> knows European languages, so I pick Whisper. If you only ever speak English,
+> leave Parakeet.
 
-**Shot:** click record in Meetily, say a sentence, stop, show the transcript appear
-in the sidebar.
+### 4. The live test — 2:45 to 3:45
 
-## 5. Mixed-language calls — 4:00 to 4:40  (Meetily settings, optional section)
+**Shot:** browser, go to `zoom.us/test`, click Join. Don't touch Meetily.
 
-> One tip if your calls mix languages. Mine mix English and Arabic. Parakeet
-> only knows European languages, so Arabic words come out as nonsense. Whisper
-> handles both, so set the model to Whisper. Then the summary: the installer
-> already added a template to Meetily. Open any meeting, press Generate Summary,
-> and the default template keeps every Arabic word, puts the English meaning in
-> brackets, and adds a glossary at the end. Nothing to set up, nothing to type.
+> Now the real test. I'll join Zoom's test meeting and do nothing else.
 
-**Shot:** Settings → model set to Whisper. Then a meeting: click the Template
-button next to Generate Summary to show "Standard Meeting Notes + glossary" is
-selected, generate, scroll to a line like "sadaqah (voluntary charity)" and the
-glossary table at the bottom.
+**Shot:** wait. Around 15 to 20 seconds later Meetily jumps to the front and the notification appears. Point at it.
 
-## 6. Close — 4:40 to 5:00  (back to /meet)
+> There. Zoom took the microphone, Meeting Watcher noticed, Meetily opened and
+> reminded me. I press Start Recording.
 
-> That's it. It runs every time you log in and you never think about it again.
-> Everything's at ihsanops.ai/meet: the install line, troubleshooting, and if
-> you'd rather I did it with you on a call, there's a £49 option there too.
+**Shot:** click **Start Recording** in Meetily. Then say these four sentences into the Zoom test call, slowly, so the transcript and the summary have Arabic terms to work with:
+
+> Let's confirm the Umrah group booking, inshallah by Friday.
+> Brother Yusuf will handle the sadaqah collection this week.
+> We need the jummah announcement ready before Thursday.
+> And please double-check the zakat calculation before we send it.
+
+**Shot:** the transcript appearing live in Meetily. Point at "inshallah" or "sadaqah" in the text.
+
+> You can see it transcribing live, and because it's Whisper, the Arabic words
+> come through properly.
+
+**Shot:** leave the Zoom meeting. Click **Stop Recording** in Meetily. The second notification ("call ended") appears.
+
+> When the call ends, I get a second reminder to stop. Stop recording.
+
+### 5. The summary and the template — 3:45 to 4:30
+
+**Shot:** Meetily, the meeting you just recorded. Click the **Template** button next to Generate Summary. Hover "Standard Meeting Notes + glossary".
+
+> Here's that template from the install. It's already selected, nothing to pick.
+
+**Shot:** click **Generate Summary**. Wait (gets cut). Scroll the summary to a line with brackets, then to the glossary table at the bottom.
+
+> Generate. Takes about a minute on my Mac, I'll cut the wait.
+>
+> Look at this. Everything in English, but every Arabic word kept and explained:
+> sadaqah, voluntary charity. Jummah, the Friday prayer. And a glossary at the
+> bottom with the sentence each one came from.
+>
+> If you speak Urdu or Turkish or Somali on your calls, same thing. If you speak
+> only English, you'll just never see this section.
+
+### 6. Close — 4:30 to 5:00
+
+**Shot:** back to `ihsanops.ai/meet`, cursor resting on the install command.
+
+> That's the whole thing. Free, private, and it works by itself from now on.
+> Everything is at ihsanops.ai/meet: the install line, the troubleshooting, and
+> if you'd rather sit with me for twenty minutes and have it done, there's a
+> forty-nine pound option there too.
 > Windows version is in beta if you want to be the first to try it.
-
-**Shot:** /meet page, cursor resting on the install command.
+> Assalamu alaikum.
 
 ---
 
-## Description (paste under the video)
+## Part C. After recording
 
-Free, open-source, nothing leaves your Mac.
-Install: https://ihsanops.ai/meet
-Source: https://github.com/ali-tm-amin/meeting-watcher
+### Send me
+
+- The screen recording file (.mov from QuickTime or .mp4 from Kap). Put it in `~/Movies/meeting-watcher-video/` or tell me where it is.
+- Nothing else. Don't trim it yourself.
+
+### What I do with it
+
+Transcribe, cut the silences and the retakes, cut the downloads and the summary wait, add the chapter titles, zoom in on the notification and on the glossary, add captions, and render the final MP4. Plus a 60-second vertical cut (hook, the pop-up, the glossary, the link) for LinkedIn and Shorts.
+
+### Restore your meetings
+
+```bash
+cp ~/Desktop/meetily-backup/meeting_minutes.sqlite ~/Library/Application\ Support/com.meetily.ai/
+```
+
+Then open Meetily and your old meetings are back. Delete the two backup folders on the Desktop once you've checked.
+
+---
+
+## YouTube
+
+**Title:** Never forget to record a client call again (free, private, 10-minute setup)
+
+**Description:**
+
+Free, open-source, nothing leaves your Mac. Pops up a transcriber the moment a Zoom or Teams call starts.
+
+Install (one line): https://ihsanops.ai/meet
+Source code: https://github.com/ali-tm-amin/meeting-watcher
 Windows beta: https://ihsanops.ai/meet (PowerShell tab)
 £49 done-with-you setup: https://ihsanops.ai/meet
 
 Chapters
-0:00 Why
-0:20 What it is
-1:00 Install
-2:15 Meetily permissions and model
-3:15 Test call
-4:00 Mixed-language calls (English + Arabic)
-4:40 Wrap up
+0:00 The problem
+0:15 What it is
+0:45 Install
+1:45 Meetily permissions and model
+2:45 Live test call
+3:45 Summary with Arabic terms explained
+4:30 Wrap up
 
-## What to send me after recording
-
-- The screen recording (.mov or .mp4) and, if separate, the voice track.
-- Nothing else. I transcribe it, cut the silences and retakes, add the chapter
-  titles, lower-third captions and the zoom-ins on the notification, and render
-  the final MP4 plus a 60-second vertical cut for LinkedIn and Shorts.
+**Tags:** meeting transcription, zoom recording, free meeting notes, meetily, mac automation, muslim business, ihsanops
