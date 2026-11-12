@@ -130,6 +130,9 @@ echo
 echo "  Log:        cat ~/Library/Logs/meeting-watcher.log"
 echo "  Uninstall:  bash ~/meeting-watcher/uninstall.sh"
 echo
+echo "  Did Meetily pop up on your first call? One line to ali@ihsanops.co.uk"
+echo "  tells us whether this works beyond our own Macs. Yes or no, both help."
+echo
 echo "  Prefer us to set it up for you? £49 Quick Setup → https://ihsanops.ai/meet"
 echo "  Want transcripts filed into your CRM automatically? From £250 → https://ihsanops.ai/meet"
 echo
